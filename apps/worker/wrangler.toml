@@ -1,5 +1,5 @@
 
-name = "partner-log-forwarder"
+name = "server-logs-forwarder"
 main = "src/index.ts"
 compatibility_date = "2025-12-01"
 
@@ -14,6 +14,12 @@ SAMPLE_RATE = "1.0"
 REDACT_HEADERS = "authorization,cookie"
 SIGN_BODY = "false"
 REQUEST_TIMEOUT_MS = "6000"
+CLARITY_ENDPOINT = ""
+BATCH_MS = "20000"
+BATCH_MAX_REQUESTS = "200"
+BACKOFF_BASE_MS = "2000"
+BACKOFF_MAX_MS = "60000"
+
 
 [observability]
 enabled = true
