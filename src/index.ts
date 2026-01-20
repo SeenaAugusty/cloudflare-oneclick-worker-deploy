@@ -9,7 +9,7 @@ export interface Env extends DOEnv {
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    // 1) Proxy to origin (unchanged behavior)
+    // 1) Proxy to origin 
     const response = await fetch(request);
 
     // 2) Build a compact log record

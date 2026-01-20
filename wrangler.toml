@@ -17,9 +17,10 @@ bindings = [
   { name = "LOG_DO", class_name = "LogDO" }
 ]
 
+
 [[migrations]]
 tag = "v1-add-log-do"
-new_classes = ["LogDO"]
+new_sqlite_classes = ["LogDO"]
 
 [observability]
 enabled = true
