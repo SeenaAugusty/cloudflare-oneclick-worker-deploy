@@ -3,17 +3,23 @@ name = "cloudflare-oneclick-worker-deploy"
 main = "src/index.ts"
 compatibility_date = "2025-12-01"
 
-# Routes are attached by CI step (deploy-worker.yml). Keep empty here.
-# routes = [ ]
-
 [vars]
-# Injected at deploy time via CI `--var KEY:VALUE`
+# REQUIRED at runtime (set in Cloudflare UI → Workers → Settings → Variables)
 CLARITY_ENDPOINT = ""
+# Optional tuning knobs
 BATCH_MS = "20000"
 BATCH_MAX_REQUESTS = "200"
 BACKOFF_BASE_MS = "2000"
 BACKOFF_MAX_MS = "60000"
 
+[durable_objects]
+bindings = [
+  { name = "LOG_DO", class_name = "LogDO" }
+]
+
+[[migrations]]
+tag = "v1-add-log-do"
+new_classes = ["LogDO"]
 
 [observability]
 enabled = true

@@ -1,6 +1,6 @@
 {
-  "name": "server-logs-forwarder",
-  "version": "1.2.0",
+  "name": "cloudflare-oneclick-worker-do",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
